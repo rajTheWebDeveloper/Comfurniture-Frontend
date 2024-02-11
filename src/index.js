@@ -1,13 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter} from 'react-router-dom';
+import { Provider } from 'react-redux';
+import {configureStore} from '@reduxjs/toolkit'
+import ProductsSlice from './slices/ProductsSlice';
+import MiscSlice from './slices/MiscSlice';
+import UserSlice from './slices/UserSlice';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+let store=configureStore({
+  reducer:{
+    Products:ProductsSlice,
+    User:UserSlice,
+    Misc:MiscSlice
+  }
+})
+
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
