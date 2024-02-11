@@ -16,7 +16,7 @@ const Login = () => {
   let {user,msg,USER_LOGIN_LOADING,USER_LOGIN_SUCCESS,USER_LOGIN_ERROR}=useSelector(state=>state.User)
   let navigate=useNavigate()
   let dispatch=useDispatch()
-  // const notify = () => toast()
+  const notify = (msg) => toast(msg)
 
 
   let [input,setInput]=useState({
@@ -34,10 +34,18 @@ const Login = () => {
      })
   }
 
-
   let handleSubmit=(e)=>
   {
       e.preventDefault()
+
+      if(!email.trim())
+      {
+         notify("Email can't be empty")
+      }
+      if(!password.trim())
+      {
+        notify("Password can't be empty")
+      }
       let formData=new FormData()
       formData.append('email',input.email)
       formData.append('password',input.password)
