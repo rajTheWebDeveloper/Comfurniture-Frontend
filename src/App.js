@@ -14,6 +14,7 @@ import { useEffect } from 'react';
 import { useNavigate} from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import SingleProduct from './pages/SingleProduct';
 
 
 function App() 
@@ -56,6 +57,7 @@ function App()
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
+        <Route path='/products/:id' element={<SingleProduct/>}/>
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<SignUp />} />

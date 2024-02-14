@@ -1,9 +1,11 @@
 import axios from 'axios'
 
 
+
 let AxiosInstance = axios.create({
-  baseURL: "https://comfur.onrender.com/",
+  baseURL: "http://localhost:8000/",
 })
+
 
 
 

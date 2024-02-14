@@ -16,6 +16,7 @@ let initialState={
 }
 
 
+
 let signUpRequest = createAsyncThunk("user/signUpRequest", async (formData) => {
   let response = await AxiosInstance.post("/user/register", formData, {
     headers: {
@@ -75,7 +76,7 @@ let UserSlice=createSlice({
             } 
             else 
             {
-                state.msg=msg
+                state.msg=msg;
             }
         })
         .addCase(signUpRequest.rejected,(state)=>
@@ -95,9 +96,11 @@ let UserSlice=createSlice({
             let {success,data,msg} = action.payload;
             if(success)
             {
+                let {token}=action.payload;
                 let { firstName } = data;
                 state.user = data;
                 state.msg = msg;
+                state.token=token;
             }
             else 
             {
@@ -111,6 +114,7 @@ let UserSlice=createSlice({
         })
     }
 })
+
 
 
 

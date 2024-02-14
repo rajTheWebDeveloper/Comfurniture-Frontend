@@ -38,13 +38,15 @@ const Login = () => {
   {
       e.preventDefault()
 
-      if(!email.trim())
+      if(!input.email.trim())
       {
          notify("Email can't be empty")
+         return
       }
-      if(!password.trim())
+      if(!input.password.trim())
       {
         notify("Password can't be empty")
+        return
       }
       let formData=new FormData()
       formData.append('email',input.email)
@@ -54,7 +56,6 @@ const Login = () => {
         email: "",
         password: "",
       })
-      // notify()
   }
 
   useEffect(()=>
