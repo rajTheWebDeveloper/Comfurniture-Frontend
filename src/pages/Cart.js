@@ -88,7 +88,7 @@ const Cart = () => {
   if (FETCH_CART_SUCCESS && !Cart || Cart?.cartItems?.length === 0 || !user) {
     return (
       <div className='mx-auto w-[100%] flex items-center flex-col mt-8 min-h-screen'>
-        <h2 className='text-xl'>Your cart is empty</h2>
+        <h2 className='text-xl text-slate-700'>Your cart is empty</h2>
         <Link to='/products'>
           <button className='text-md text-white px-4 py-2 bg-pink-600 mt-3 rounded-md'>Shop Now</button>
         </Link>
