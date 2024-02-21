@@ -8,6 +8,7 @@ import {configureStore} from '@reduxjs/toolkit'
 import ProductsSlice from './slices/ProductsSlice';
 import MiscSlice from './slices/MiscSlice';
 import UserSlice from './slices/UserSlice';
+import CartSlice from './slices/CartSlice';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -15,7 +16,8 @@ let store=configureStore({
   reducer:{
     Products:ProductsSlice,
     User:UserSlice,
-    Misc:MiscSlice
+    Misc:MiscSlice,
+    Cart:CartSlice
   }
 })
 

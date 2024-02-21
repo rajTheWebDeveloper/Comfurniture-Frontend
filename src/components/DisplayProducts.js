@@ -23,8 +23,7 @@ const DisplayProducts = () => {
     let [gridActive,setGridActive]=useState(true)
     
     let dispatch=useDispatch()
-
-
+    
     useEffect(()=>
     {
         dispatch(fetchProductsData(url))
@@ -55,7 +54,7 @@ const DisplayProducts = () => {
   return (
     <StyledDisplayProducts>
       <Aligner gridActive={gridActive} setGridActive={setGridActive} filteredData={filteredData}/>
-      <section className="h-screen w-[100%] py-6">
+      <section className="h-auto w-[100%] py-6">
         <section className={`gallery ${gridActive ? 'griddy' : 'towery'}`}>
           {gridActive
             ? filteredData.map((product) => {

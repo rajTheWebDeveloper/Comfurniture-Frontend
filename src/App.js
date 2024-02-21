@@ -15,6 +15,8 @@ import { useNavigate} from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SingleProduct from './pages/SingleProduct';
+import Footer from './components/Footer';
+import NotFound from './pages/NotFound';
 
 
 function App() 
@@ -49,7 +51,7 @@ function App()
 
 
   return (
-    <div className="App h-screen w-[100vw] overflow-x-hidden bg-slate-200">
+    <div className="App h-screen w-[100vw] bg-slate-200 overflow-x-hidden">
       <ToastContainer />
       <Navbar />
       <Sidebar />
@@ -57,15 +59,20 @@ function App()
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
-        <Route path='/products/:id' element={<SingleProduct/>}/>
+        <Route path="/products/:id" element={<SingleProduct />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
+      {window.location.pathname !== "/login" &&
+        window.location.pathname !== "/signup" && <Footer />}
     </div>
   );
 }
+
+
 
 
 export default App;

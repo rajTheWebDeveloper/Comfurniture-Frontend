@@ -94,7 +94,7 @@ const Filters = () => {
     },[filters])
 
   return (
-    <section className="h-auto mb-8 w-[100%] text-slate-600">
+    <section className="h-auto mb-4 w-[100%] text-slate-600">
       <div className="category-filter flex flex-col items-start my-2">
         <input
           onChange={handleFilters}
@@ -187,7 +187,7 @@ const Filters = () => {
         </div>
       </div>
       <div className="shipping-filter flex items-center my-3">
-        <p className='text-sm mr-4'>Free Shipping</p> <input type="checkbox" name='shipping' onClick={handleFilters}/>
+        <p className='text-sm mr-4'>Fast Shipping</p> <input type="checkbox" name='shipping' onClick={handleFilters}/>
       </div>
     </section>
   );

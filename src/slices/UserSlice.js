@@ -3,18 +3,17 @@ import AxiosInstance from '../remote/Axios'
 import { FaTruckMonster } from 'react-icons/fa'
 
 
-let initialState={
-    user:"",
-    msg:"",
-    token:"",
-    USER_SIGNUP_LOADING:false,
-    USER_SIGNUP_SUCCESS:false,
-    USER_SIGNUP_ERROR:false,
-    USER_LOGIN_LOADING:false,
-    USER_LOGIN_SUCCESS:false,
-    USER_LOGIN_ERROR:false
-}
-
+let initialState = {
+  user: JSON.parse(localStorage.getItem("user")) || "",
+  msg: "",
+  token: "",
+  USER_SIGNUP_LOADING: false,
+  USER_SIGNUP_SUCCESS: false,
+  USER_SIGNUP_ERROR: false,
+  USER_LOGIN_LOADING: false,
+  USER_LOGIN_SUCCESS: false,
+  USER_LOGIN_ERROR: false,
+};
 
 
 let signUpRequest = createAsyncThunk("user/signUpRequest", async (formData) => {
@@ -26,6 +25,7 @@ let signUpRequest = createAsyncThunk("user/signUpRequest", async (formData) => {
   console.log(response)
   return response.data
 })
+
 
 
 let signInRequest=createAsyncThunk('user/signInRequest',async (formData)=>
@@ -49,6 +49,7 @@ let UserSlice=createSlice({
             state.user=""
             state.msg=""
             state.token=""
+            localStorage.clear('user')
         }
     },
     extraReducers:(builder)=>
@@ -73,6 +74,7 @@ let UserSlice=createSlice({
                 state.user = data;
                 state.msg=msg;
                 state.token=token
+                localStorage.setItem('user',JSON.stringify(data))
             } 
             else 
             {
@@ -101,6 +103,7 @@ let UserSlice=createSlice({
                 state.user = data;
                 state.msg = msg;
                 state.token=token;
+                localStorage.setItem('user',JSON.stringify(data))
             }
             else 
             {

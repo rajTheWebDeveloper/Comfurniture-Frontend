@@ -14,7 +14,7 @@ const Profile = () => {
     }
 
   return (
-    <section>
+    <section className='min-h-screen'>
         <button className='px-4 py-1 bg-pink-600 text-white' onClick={handleClick}>Logout Bro</button>
     </section>
   )
