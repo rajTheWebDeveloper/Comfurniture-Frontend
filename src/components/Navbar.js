@@ -36,7 +36,7 @@ const Navbar = () => {
           <Link to="/">
             <h2 className="text-3xl text-pink-600 protest">ComFurniture</h2>
           </Link>
-          <button className="lg:hidden" onClick={handleClick}>
+          <button className="lg:hidden text-pink-600" onClick={handleClick}>
             <MdOutlineSegment size={24} />
           </button>
         </header>
