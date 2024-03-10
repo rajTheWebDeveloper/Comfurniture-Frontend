@@ -14,9 +14,10 @@ const Profile = () => {
     }
 
   return (
-    <section className='min-h-screen'>
-        <button className='px-4 py-1 bg-pink-600 text-white' onClick={handleClick}>Logout Bro</button>
+    <section className='min-h-screen flex flex-col justify-start items-center'>
+        <button className='px-4 py-1 bg-pink-600 mt-20 text-white text-center' onClick={handleClick}>Logout User</button>
     </section>
   )
 }
+
 export default Profile
