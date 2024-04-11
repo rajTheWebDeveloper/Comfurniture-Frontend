@@ -1,8 +1,6 @@
 import React from 'react'
 import { TfiLayoutGrid3 } from "react-icons/tfi";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
-import { IoGridOutline } from "react-icons/io5";
-import { IoGrid } from "react-icons/io5";
 import { BsGrid1X2 } from "react-icons/bs";
 import { BsGrid1X2Fill } from "react-icons/bs";
 import { updateFilters} from '../slices/ProductsSlice';
@@ -13,8 +11,6 @@ import { useDispatch} from 'react-redux';
 
 
 const Aligner = ({gridActive,setGridActive,filteredData}) => {
-
-  let url = "https://course-api.com/react-store-products";
 
 
   let dispatch = useDispatch();

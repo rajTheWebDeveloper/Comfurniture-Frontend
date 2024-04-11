@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useSyncExternalStore } from 'react'
+import React, { useEffect, useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { Link } from 'react-router-dom';
 import { signInRequest } from '../slices/UserSlice';
 import { useNavigate } from 'react-router-dom';
 import Loader from '../components/Loader';
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { IoIosEye, IoIosEyeOff } from 'react-icons/io';
 
@@ -13,7 +13,7 @@ const Login = () => {
 
 
 
-  let {user,msg,USER_LOGIN_LOADING,USER_LOGIN_SUCCESS,USER_LOGIN_ERROR}=useSelector(state=>state.User)
+  let {user,USER_LOGIN_LOADING}=useSelector(state=>state.User)
   let navigate=useNavigate()
   let dispatch=useDispatch()
   const notify = (msg) => toast(msg)

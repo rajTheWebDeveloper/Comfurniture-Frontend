@@ -10,7 +10,6 @@ import { fetchCart } from '../slices/CartSlice';
 
 
 const Navbar = () => {
-    let {sidebarStatus}=useSelector(state=>state.Misc)
     let {user}=useSelector(state=>state.User)
     let { Cart, FETCH_CART_SUCCESS } = useSelector((state) => state.Cart);
     let dispatch=useDispatch()

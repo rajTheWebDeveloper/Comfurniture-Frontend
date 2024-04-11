@@ -8,12 +8,7 @@ const FeaturedProducts = () => {
 
 
     let {
-      PRODUCTS_LOADING,
-      PRODUCTS_SUCCESS,
-      PRODUCTS_ERROR,
       productsData,
-      filteredData,
-      filters,
     } = useSelector((state) => state.Products);
     let url = "https://course-api.com/react-store-products";
 

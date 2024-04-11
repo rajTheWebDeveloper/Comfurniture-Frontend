@@ -12,28 +12,18 @@ import styled from 'styled-components'
 
 const Cart = () => {
 
-   let { SINGLE_PRODUCT_LOADING, singleProduct } = useSelector(
+   let { singleProduct } = useSelector(
      (state) => state.Products
    );
 
    let [subtotal,setSubTotal]=useState(0)
    let {
-     category,
-     colors,
-     company,
-     description,
-     name,
-     price,
-     reviews,
-     shipping,
-     stars,
      stock,
-     images,
    } = singleProduct;
 
   let dispatch=useDispatch()
   let {user}=useSelector(state=>state.User)
-  let {FETCH_CART_LOADING,FETCH_CART_SUCCESS,Cart,cartItems}=useSelector(state=>state.Cart)
+  let {FETCH_CART_LOADING,FETCH_CART_SUCCESS,Cart}=useSelector(state=>state.Cart)
 
 
   let handleIncrease=async (user,name)=>

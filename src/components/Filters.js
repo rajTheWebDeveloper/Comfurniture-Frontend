@@ -7,7 +7,7 @@ import { updateFilters } from '../slices/ProductsSlice'
 
 const Filters = () => {
 
-    let {productsData,filteredData,PRODUCTS_LOADING,filters}=useSelector(state=>state.Products)
+    let {productsData,filters}=useSelector(state=>state.Products)
 
     let dispatch=useDispatch()
     let CategoryFilters=['all',...new Set(productsData.map((items)=>

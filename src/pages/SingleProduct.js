@@ -18,7 +18,7 @@ const SingleProduct = () => {
     let {user,token}=useSelector(state=>state.User)
     
 
-    let {category,colors,company,description,name,price,reviews,shipping,stars,stock,images}=singleProduct;
+    let {colors,company,description,name,price,stock,images}=singleProduct;
     let { id } = useParams();
     let dispatch=useDispatch()
     let single_url = "https://course-api.com/react-store-single-product?id=";
@@ -62,7 +62,6 @@ const SingleProduct = () => {
 
     let handleAddToCart=async ()=>
     {
-      let formData = new FormData();
       await dispatch(addToCart({ token,user:user._id, name, price, amount: count,stock:stock,productImage:images[0].url}));
       dispatch(fetchCart({ user: user._id }));
     }
@@ -96,6 +95,7 @@ const SingleProduct = () => {
                   let { url } = items;
                   return (
                     <img
+                      alt="Main Image"
                       src={url}
                       onClick={() => setMainImage(idx)}
                       className="h-[60px] lg:h-[70px] w-[100%] object-cover rounded-md cursor-pointer"

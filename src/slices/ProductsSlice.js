@@ -45,7 +45,6 @@ let ProductsSlice=createSlice({
         updateProducts:(state,action)=>
         {
             let {category,company,color,search,shipping}=state.filters;
-            let bounceBack=[...state.productsData]
             let updatedProducts=[...state.productsData];
             
 

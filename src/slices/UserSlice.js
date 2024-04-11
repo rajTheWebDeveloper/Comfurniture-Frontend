@@ -1,6 +1,5 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 import AxiosInstance from '../remote/Axios'
-import { FaTruckMonster } from 'react-icons/fa'
 
 
 let initialState = {
@@ -65,12 +64,11 @@ let UserSlice=createSlice({
             state.USER_SIGNUP_LOADING=false
             state.USER_SIGNUP_SUCCESS=true
             console.log(action.payload)
-            let { success, data, msg } = action.payload;
+            let { success, msg } = action.payload;
             if(success)
             {
-                let { success, data, msg, token } = action.payload;
+                let { data, msg, token } = action.payload;
                 console.log("Why the hell i am running")
-                let { firstName, lastName, email, password, _id } = data;
                 state.user = data;
                 state.msg=msg;
                 state.token=token
@@ -99,7 +97,6 @@ let UserSlice=createSlice({
             if(success)
             {
                 let {token}=action.payload;
-                let { firstName } = data;
                 state.user = data;
                 state.msg = msg;
                 state.token=token;

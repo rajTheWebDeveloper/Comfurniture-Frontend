@@ -12,9 +12,6 @@ import Aligner from './Aligner'
 const DisplayProducts = () => {
     let {
       PRODUCTS_LOADING,
-      PRODUCTS_SUCCESS,
-      PRODUCTS_ERROR,
-      productsData,
       filteredData,
       filters
     } = useSelector((state) => state.Products);

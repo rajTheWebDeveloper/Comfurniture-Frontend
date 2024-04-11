@@ -3,7 +3,7 @@ import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { Link } from 'react-router-dom';
@@ -13,7 +13,7 @@ import Loader from '../components/Loader';
 
 const SignUp = () => {
 
-  let {msg, USER_SIGNUP_LOADING, USER_SIGNUP_SUCCESS, USER_SIGNUP_ERROR,user} =
+  let {USER_SIGNUP_LOADING,user} =
     useSelector((state) => state.User);
   let dispatch=useDispatch()
   let navigate=useNavigate()
@@ -167,6 +167,7 @@ const SignUp = () => {
           <input
             type="file"
             id="img"
+            alt='File'
             className="sr-only"
             onChange={handleProfile}
           />
