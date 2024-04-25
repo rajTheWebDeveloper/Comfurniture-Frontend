@@ -21,6 +21,7 @@ const DisplayProducts = () => {
     
     let dispatch=useDispatch()
     
+    console.log("Checking API")
     useEffect(()=>
     {
         dispatch(fetchProductsData(url))
