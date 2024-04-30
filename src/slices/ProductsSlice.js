@@ -20,13 +20,13 @@ let fetchProductsData=createAsyncThunk('product/fetchProductsData',async (url)=>
 {
     let response=await axios.get(url)
     console.log(response.data)
-    return response.data;
+    return response.data.data;
 })
 
 let fetchSingleProductData = createAsyncThunk("product/fetchSingleProductData",async (url)=>
 {
   let response=await axios.get(url)
-  return response.data;
+  return response.data.data;
 })
 
 

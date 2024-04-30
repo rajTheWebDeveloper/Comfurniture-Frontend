@@ -15,8 +15,8 @@ const DisplayProducts = () => {
       filteredData,
       filters
     } = useSelector((state) => state.Products);
-    let url = "https://course-api.com/react-store-products";
-
+    let url = "http://localhost:2000/api/getproducts";
+    
     let [gridActive,setGridActive]=useState(true)
     
     let dispatch=useDispatch()

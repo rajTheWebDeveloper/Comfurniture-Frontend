@@ -21,8 +21,10 @@ const SingleProduct = () => {
     let {colors,company,description,name,price,stock,images}=singleProduct;
     let { id } = useParams();
     let dispatch=useDispatch()
-    let single_url = "https://course-api.com/react-store-single-product?id=";
+    let single_url =
+      "https://proxy-backend-63ux.onrender.com/api/getsingle?id=";
     single_url=single_url+id;
+    console.log("MILLA",single_url)
 
     let [mainImage,setMainImage]=useState(0)
     let [activeColor,setActiveColor]=useState(0)
