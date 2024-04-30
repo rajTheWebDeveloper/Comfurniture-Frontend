@@ -10,7 +10,7 @@ const FeaturedProducts = () => {
     let {
       productsData,
     } = useSelector((state) => state.Products);
-    let url = "https://course-api.com/react-store-products";
+    let url = "https://proxy-backend-63ux.onrender.com/api/getproducts";
 
 
     let dispatch = useDispatch();
