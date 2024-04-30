@@ -15,7 +15,7 @@ const DisplayProducts = () => {
       filteredData,
       filters
     } = useSelector((state) => state.Products);
-    let url = "http://localhost:2000/api/getproducts";
+    let url = "https://proxy-backend-63ux.onrender.com/api/getproducts";
     
     let [gridActive,setGridActive]=useState(true)
     
